@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rodrigo Alencar | Personal Trainer On-line</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://drive.google.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#050505',
+                        surface: '#121212',
+                        primary: '#E2FF00', // Neon yellow/green for fitness vibe
+                        primaryHover: '#C8E600',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for Marquee and Utilities -->
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        
+        .glass {
+            background: rgba(18, 18, 18, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #888888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: flex;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-black">
+
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 w-full z-50 glass transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="font-display font-bold text-xl tracking-tighter uppercase">
+                RodrigoAlencar<span class="text-primary">.</span>
+            </a>
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <a href="#metodo" class="hover:text-white transition-colors">O Método</a>
+                <a href="#diferenciais" class="hover:text-white transition-colors">Diferenciais</a>
+                <a href="#depoimentos" class="hover:text-white transition-colors">Resultados</a>
+                <a href="#sobre" class="hover:text-white transition-colors">Sobre Mim</a>
+            </nav>
+            <a href="https://api.whatsapp.com/send/?phone=5569992285996&text&type=phone_number&app_absent=0" target="_blank" class="bg-white text-black px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary transition-colors duration-300">
+                Começar Agora
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Gym Workout" class="w-full h-full object-cover opacity-40" fetchpriority="high">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/50 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <div class="max-w-3xl">
+                <div class="hero-elem inline-block px-4 py-1.5 rounded-full border border-white/10 glass text-xs font-semibold tracking-widest uppercase mb-6 text-gray-300">
+                    PERSONAL TRAINER
+                </div>
+                <h1 class="hero-elem font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter mb-6">
+                    CORPO FORTE.<br>
+                    <span class="text-gradient">ZERO DOR.</span>
+                </h1>
+                <p class="hero-elem text-lg md:text-xl text-gray-400 mb-10 max-w-xl font-light leading-relaxed">
+                    Emagreça e ganhe massa muscular com treinos corretivos. Um método seguro e validado para resultados reais, feito sob medida para você.
+                </p>
+                <div class="hero-elem flex flex-col sm:flex-row gap-4">
+                    <a href="https://api.whatsapp.com/send/?phone=5569992285996&text&type=phone_number&app_absent=0" target="_blank" id="hero-cta" class="bg-primary text-black px-8 py-4 rounded-full font-semibold text-center shadow-[0_0_30px_rgba(226,255,0,0.3)]">
+                        Quero Transformar Meu Corpo
+                    </a>
+                    <a href="#metodo" class="px-8 py-4 rounded-full font-semibold text-center border border-white/20 hover:bg-white/5 transition-colors duration-300">
+                        Entenda o Método
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE / AUTHORITY -->
+    <div class="py-10 border-y border-white/5 bg-[#0a0a0a] overflow-hidden">
+        <div class="marquee-container">
+            <div class="marquee-content items-center gap-16 px-8">
+                <!-- Duplicate content for seamless loop -->
+                <div class="flex items-center gap-16">
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">+500 ALUNOS</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">TREINO CORRETIVO</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">RESULTADOS REAIS</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">MÉTODO SEGURO</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </div>
+                <div class="flex items-center gap-16">
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">+500 ALUNOS</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">TREINO CORRETIVO</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">RESULTADOS REAIS</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                    <span class="font-display text-2xl font-bold text-white/40 uppercase tracking-wider">MÉTODO SEGURO</span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="py-32 relative bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Imagem -->
+                <div class="relative aspect-[4/5] rounded-3xl overflow-hidden gs-reveal shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+                    <img src="https://drive.google.com/thumbnail?id=1L2j6-FFQKBqWSDFLmFUdkv7fS1G9EqdI&sz=w1000" alt="Rodrigo Alencar" class="w-full h-full object-cover" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <p class="text-primary font-bold tracking-wider uppercase text-sm mb-1">Personal Trainer</p>
+                        <h3 class="font-display text-3xl font-bold text-white">Rodrigo Alencar</h3>
+                    </div>
+                </div>
+                
+                <!-- Texto -->
+                <div class="gs-reveal">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-8">QUEM <span class="text-primary">SOU EU</span></h2>
+                    
+                    <div class="space-y-6 text-gray-400 text-lg font-light leading-relaxed">
+                        <p>
+                            Com mais de 10 anos de experiência minha missão é te ajudar a transformar seu corpo e mente, provando que você não precisa viver na academia para ter resultados significativos.
+                        </p>
+                        <p>
+                            Sou formado em Educação Física, pós-graduado em Fisiologia do Exercício e especialista em Biomecânica. Desenvolvi Métodos de acordo com cada perfil de cliente, e hoje implemento um direcionamento inteligente e individualizado.
+                        </p>
+                        <p>
+                            Não acredito em treinos milagrosos ou dietas restritivas extremas. Acredito na ciência aplicada à sua rotina, no esforço direcionado e na constância. Meu objetivo é te entregar o caminho mais curto e seguro para a sua melhor versão.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-8 mt-12">
+                        <div class="glass p-6 rounded-2xl border border-white/5">
+                            <p class="font-display text-4xl font-bold text-white mb-2">+10 <span class="text-primary text-xl">anos</span></p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold">De mercado</p>
+                        </div>
+                        <div class="glass p-6 rounded-2xl border border-white/5">
+                            <p class="font-display text-4xl font-bold text-white mb-2">+200</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold">Alunos Transformados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENTO GRID / DIFERENCIAIS -->
+    <section id="diferenciais" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20 md:w-2/3 gs-reveal">
+                <h2 class="font-display text-4xl md:text-6xl font-bold tracking-tighter mb-6">A CIÊNCIA POR TRÁS<br>DO SEU <span class="text-primary">RESULTADO</span>.</h2>
+                <p class="text-gray-400 text-lg font-light">Não é apenas suar. É treinar com inteligência. Nosso acompanhamento individual garante que cada movimento conte a seu favor.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+                <!-- Card 1 -->
+                <div class="gs-reveal bento-card md:col-span-2 glass rounded-3xl p-8 relative overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(226,255,0,0.15)] hover:z-10" data-parallax="-5">
+                    <img src="https://feelmov.com.br/wp-content/uploads/2025/02/personal-trainer-treinamento-indivisual-300x169.jpg" alt="Acompanhamento Individual" class="absolute inset-0 w-full h-full object-cover object-top opacity-20 group-hover:opacity-30 transition-opacity duration-500 grayscale" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold mb-2">Acompanhamento Individual</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed max-w-md">Avaliação física completa e ajuste de treinos contínuo. Seu plano evolui junto com o seu corpo, garantindo o direcionamento otimizado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="gs-reveal bento-card glass rounded-3xl p-8 relative overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(226,255,0,0.15)] hover:z-10" data-parallax="-15">
+                    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center opacity-20 group-hover:opacity-30 transition-opacity duration-500 grayscale"></div>
+                    <div class="relative z-10 h-full flex flex-col justify-end">
+                        <h3 class="font-display text-2xl font-bold mb-2">Foco em Resultado</h3>
+                        <p class="text-gray-400 text-sm">Metas claras e métricas precisas para você ver a evolução.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="gs-reveal bento-card glass rounded-3xl p-8 relative overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(226,255,0,0.15)] hover:z-10" data-parallax="-8">
+                    <img src="https://feelmov.com.br/wp-content/uploads/2025/02/treinamento-1-1-personal-e-atleta-768x432.jpg" alt="Treino Corretivo" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500 grayscale" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                    <div class="relative z-10 h-full flex flex-col justify-between">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-display text-2xl font-bold mb-2">Treino Corretivo</h3>
+                            <p class="text-gray-400 text-sm">Ganhe massa e perca gordura sem sobrecarregar articulações.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="gs-reveal bento-card md:col-span-2 glass rounded-3xl p-8 relative overflow-hidden group bg-[#1a1a1a] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(226,255,0,0.15)] hover:z-10" data-parallax="-12">
+                    <div class="relative z-10 h-full flex flex-col md:flex-row items-center gap-8">
+                        <div class="flex-1">
+                            <h3 class="font-display text-3xl font-bold mb-4">Personal On-line</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Tenha acesso ao seu treino na palma da mão. Suporte via WhatsApp, vídeos explicativos de cada exercício e correções de movimento por vídeo.</p>
+                            <a href="https://api.whatsapp.com/send/?phone=5569992285996&text&type=phone_number&app_absent=0" target="_blank" class="inline-flex items-center text-primary font-semibold hover:text-white transition-colors">
+                                Saber mais <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                        <div class="w-full md:w-1/3 h-full rounded-2xl overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=800&auto=format&fit=crop" alt="App Workout" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE / SERVIÇOS -->
+    <section id="metodo" class="py-32 bg-[#0a0a0a] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1 relative gs-reveal">
+                    <div class="aspect-[4/5] rounded-3xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1000&auto=format&fit=crop" alt="Personal Trainer" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" loading="lazy" decoding="async">
+                    </div>
+                    <!-- Floating badge -->
+                    <div class="absolute -bottom-8 -right-8 glass p-6 rounded-2xl max-w-xs hidden md:block">
+                        <p class="font-display text-3xl font-bold text-primary mb-1">+5 Anos</p>
+                        <p class="text-sm text-gray-400">Transformando corpos e recuperando a autoestima.</p>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 gs-reveal">
+                    <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-8">NÃO É SÓ ESTÉTICA.<br>É <span class="text-primary">QUALIDADE DE VIDA</span>.</h2>
+                    <div class="space-y-6 text-gray-400 font-light leading-relaxed">
+                        <p>
+                            Muitos jovens entre 15 e 25 anos desistem da academia por falta de resultados ou por dores articulares causadas por execuções erradas.
+                        </p>
+                        <p>
+                            Meu método é focado em <strong>Treinamento Corretivo</strong>. Nós primeiro preparamos sua estrutura, corrigimos desequilíbrios e, em seguida, aplicamos a intensidade necessária para a hipertrofia e emagrecimento.
+                        </p>
+                        <ul class="space-y-4 mt-8">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-primary mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-white">Avaliação Postural e Funcional</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-primary mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-white">Periodização de Treino Individualizada</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-primary mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                <span class="text-white">Suporte Diário e Análise de Vídeos</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA DE RESULTADOS (PROVAS SOCIAIS) -->
+    <section id="galeria" class="py-20 relative bg-[#0a0a0a]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 gs-reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-4">TRANSFORMAÇÕES <span class="text-primary">REAIS</span></h2>
+                <p class="text-gray-400">A prova visual de que o método funciona.</p>
+            </div>
+            
+            <div class="relative max-w-5xl mx-auto aspect-[4/3] md:aspect-[21/9] rounded-3xl overflow-hidden glass gs-reveal shadow-[0_0_40px_rgba(0,0,0,0.3)]">
+                <!-- Slide 1 -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-10">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="Resultado 1" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
+                        <p class="text-white font-display text-3xl md:text-4xl font-bold mb-2">Menos 12kg em 4 meses</p>
+                        <p class="text-primary font-semibold tracking-wider uppercase text-sm">Mariana Silva &bull; Foco em emagrecimento</p>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
+                    <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover opacity-80" alt="Resultado 2" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
+                        <p class="text-white font-display text-3xl md:text-4xl font-bold mb-2">+6kg de Massa Magra</p>
+                        <p class="text-primary font-semibold tracking-wider uppercase text-sm">Julia Mantovani &bull; Hipertrofia</p>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0">
+                    <img src="https://i.ytimg.com/vi/hnXJtsqPPz4/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgUChDMA8=&rs=AOn4CLC_KTwK_RZ7bzHEh_HB_XnlJ5GhVA" class="w-full h-full object-cover object-top opacity-80" alt="Resultado 3" referrerpolicy="no-referrer" loading="lazy" decoding="async">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 md:p-12">
+                        <p class="text-white font-display text-3xl md:text-4xl font-bold mb-2">Projeto Transforme-se</p>
+                        <p class="text-primary font-semibold tracking-wider uppercase text-sm">João Carlos &bull; Foco na estética</p>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="absolute bottom-8 right-8 flex gap-3 z-20">
+                    <button id="prev-slide" class="w-12 h-12 rounded-full border border-white/20 bg-black/50 hover:bg-primary hover:text-black hover:border-primary flex items-center justify-center backdrop-blur transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button id="next-slide" class="w-12 h-12 rounded-full border border-white/20 bg-black/50 hover:bg-primary hover:text-black hover:border-primary flex items-center justify-center backdrop-blur transition-all duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="absolute top-0 left-0 w-full h-1 bg-white/10 z-20">
+                    <div id="slide-progress" class="h-full bg-primary w-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20 gs-reveal">
+                <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tighter mb-4">RESULTADOS <span class="text-primary">REAIS</span></h2>
+                <p class="text-gray-400">O que dizem os alunos que já transformaram seus corpos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass p-8 rounded-3xl gs-reveal">
+                    <div class="flex text-primary mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 mb-8 font-light italic">"Sempre senti dor no joelho ao agachar. Com o treino corretivo, não só a dor sumiu, como ganhei 4kg de massa magra em 3 meses. O acompanhamento online é surreal de bom."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&auto=format&fit=crop" alt="User" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Lucas M.</h4>
+                            <p class="text-xs text-gray-500">22 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass p-8 rounded-3xl gs-reveal">
+                    <div class="flex text-primary mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 mb-8 font-light italic">"Eu tinha vergonha de ir à academia porque não sabia o que fazer. O direcionamento otimizado me deu confiança. Perdi 8kg e hoje o treino é a melhor parte do meu dia."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" alt="User" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Mariana S.</h4>
+                            <p class="text-xs text-gray-500">19 anos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="glass p-8 rounded-3xl gs-reveal">
+                    <div class="flex text-primary mb-6">
+                        ★★★★★
+                    </div>
+                    <p class="text-gray-300 mb-8 font-light italic">"Já tinha testado vários apps de treino, mas nada se compara ao atendimento personalizado. Ele ajusta tudo conforme minha rotina de faculdade e trabalho."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-800 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop" alt="User" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Pedro H.</h4>
+                            <p class="text-xs text-gray-500">24 anos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="contato" class="py-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary/5"></div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center gs-reveal">
+            <h2 class="font-display text-5xl md:text-7xl font-bold tracking-tighter mb-8">PRONTO PARA A<br>SUA <span class="text-primary">MELHOR VERSÃO</span>?</h2>
+            <p class="text-xl text-gray-400 mb-12 font-light">Vagas limitadas para a consultoria online. Garanta seu lugar e comece a treinar com propósito.</p>
+            <a href="https://api.whatsapp.com/send/?phone=5569992285996&text&type=phone_number&app_absent=0" target="_blank" class="inline-block bg-white text-black px-10 py-5 rounded-full font-bold text-lg hover:bg-primary hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(226,255,0,0.3)]">
+                Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10 py-12 bg-[#050505]">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="font-display font-bold text-xl tracking-tighter uppercase">
+                RodrigoAlencar<span class="text-primary">.</span>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 Rodrigo Alencar. Todos os direitos reservados.
+            </p>
+            <div class="flex gap-4 items-center">
+                <a href="https://www.instagram.com/treinador.rodrigoalencar/" target="_blank" class="text-gray-500 hover:text-white transition-colors" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white transition-colors" aria-label="TikTok">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        // Register ScrollTrigger
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-[#050505]/80');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-[#050505]/80');
+                header.classList.add('bg-transparent');
+            }
+        });
+
+        // Hero Entrance Animation
+        const heroTl = gsap.timeline();
+        heroTl.fromTo(".hero-elem", 
+            { y: 50, opacity: 0 },
+            { y: 0, opacity: 1, duration: 1, stagger: 0.2, ease: "power3.out", delay: 0.2 }
+        );
+
+        // Scroll Reveal Animation for sections
+        const revealElements = document.querySelectorAll(".gs-reveal");
+        
+        revealElements.forEach((elem) => {
+            gsap.fromTo(elem, 
+                { y: 50, opacity: 0 },
+                {
+                    y: 0, 
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: elem,
+                        start: "top 85%", // Trigger when top of element hits 85% of viewport
+                        toggleActions: "play none none reverse"
+                    }
+                }
+            );
+        });
+
+        // Bento Grid Parallax
+        const bentoCards = document.querySelectorAll('.bento-card');
+        bentoCards.forEach((card) => {
+            const yParallax = card.getAttribute('data-parallax');
+            gsap.to(card, {
+                yPercent: yParallax,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#diferenciais",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            });
+        });
+
+        // Hero CTA Pulse on scroll
+        const heroCta = document.getElementById('hero-cta');
+        if (heroCta) {
+            let pulseAnim = gsap.to(heroCta, {
+                scale: 1.05,
+                boxShadow: "0 0 50px rgba(226,255,0,0.6)",
+                duration: 0.8,
+                repeat: -1,
+                yoyo: true,
+                ease: "power1.inOut",
+                paused: true
+            });
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    pulseAnim.play();
+                } else {
+                    pulseAnim.pause();
+                    gsap.to(heroCta, { scale: 1, boxShadow: "0 0 30px rgba(226,255,0,0.3)", duration: 0.3 });
+                }
+            });
+
+            heroCta.addEventListener('mouseenter', () => {
+                pulseAnim.pause();
+                gsap.to(heroCta, { scale: 1.05, boxShadow: "0 0 50px rgba(226,255,0,0.6)", duration: 0.3 });
+            });
+            
+            heroCta.addEventListener('mouseleave', () => {
+                if (window.scrollY > 50) {
+                    pulseAnim.play();
+                } else {
+                    gsap.to(heroCta, { scale: 1, boxShadow: "0 0 30px rgba(226,255,0,0.3)", duration: 0.3 });
+                }
+            });
+        }
+
+        // Image Gallery Carousel (Provas Sociais)
+        const slides = document.querySelectorAll('.carousel-slide');
+        const progressBar = document.getElementById('slide-progress');
+        let currentSlide = 0;
+        let progressAnim;
+        const slideDuration = 6000; // 6 seconds
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                if (i === index) {
+                    slide.classList.remove('opacity-0', 'z-0');
+                    slide.classList.add('opacity-100', 'z-10');
+                } else {
+                    slide.classList.remove('opacity-100', 'z-10');
+                    slide.classList.add('opacity-0', 'z-0');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+            resetProgress();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+            resetProgress();
+        }
+
+        function startProgress() {
+            if(progressAnim) progressAnim.kill();
+            gsap.set(progressBar, { width: "0%" });
+            progressAnim = gsap.to(progressBar, {
+                width: "100%",
+                duration: slideDuration / 1000,
+                ease: "none",
+                onComplete: nextSlide
+            });
+        }
+
+        function resetProgress() {
+            startProgress();
+        }
+
+        document.getElementById('next-slide')?.addEventListener('click', () => {
+            nextSlide();
+        });
+
+        document.getElementById('prev-slide')?.addEventListener('click', () => {
+            prevSlide();
+        });
+
+        if(slides.length > 0) {
+            showSlide(0);
+            startProgress();
+        }
+    </script>
+</body>
+</html>
